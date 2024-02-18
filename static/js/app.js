@@ -41,8 +41,16 @@ function optionChanged(selectedId) {
             text: sample.otu_labels
         };
 
+        let metadata = data.metadata.find(item => item.id == selectedId);
+        let metadataText = "";
+        for (const [key, value] of Object.entries(metadata)) {
+            metadataText += `<strong>${key}:</strong> ${value}<br>`;
+        }
+        document.getElementById("sample-metadata").innerHTML = metadataText;
+
         Plotly.newPlot('bar', [barData]);
         Plotly.newPlot('bubble', [bubbleData], { xaxis: { title: 'OTU ID' } });
+        gaugechart(selectedId, data);
     });
 }
 
