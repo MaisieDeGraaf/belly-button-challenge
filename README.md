@@ -2,6 +2,9 @@
 
 This interactive web dashboard allows users to explore a dataset related to belly button biodiversity. Users can select a test subject ID number from a dropdown menu to view corresponding demographic information, a bar chart showing the top 10 OTUs (Operational Taxonomic Units) found in the subject's belly button, a bubble chart displaying all OTUs found in the subject's belly button, and a gauge chart indicating the number of belly button washes per week for the selected subject.
 
+## Deployment Website: 
+
+[Belly Button Challenge](https://maisiedegraaf.github.io/belly-button-challenge/)
 
 ## Getting Started
 
