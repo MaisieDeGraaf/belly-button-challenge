@@ -3,6 +3,10 @@ function gaugechart(selectedId, data) {
     let bellybuttonwashes = metadata ? metadata.wfreq || 0 : 0; 
 
     let gaugeValue = bellybuttonwashes || 0;
+
+    //display values to troubleshoot
+    console.log("Metadata:", metadata);
+    console.log("Bellybutton washes:", bellybuttonwashes);
     
 
     let gaugeData = [
@@ -12,7 +16,7 @@ function gaugechart(selectedId, data) {
             value: gaugeValue,
             gauge: {
                 axis: { range: [null, 9],
-                        tickvals: [],
+                        tickvals: [],  //remove original tick values
                         ticktext: [] },
                 bar: { color: "black", thickness: 0 },
                 steps: [
@@ -29,10 +33,12 @@ function gaugechart(selectedId, data) {
                 threshold: {
                     line: { color: "red", width: 4 },
                     thickness: 0.75,
-                    value: gaugeValue}
+                    value: gaugeValue} // create red line to reference the portion of the chart
             }
         }
     ];
+
+    //add the labels inside the chart
     let gaugeLayout = {
         title: {
             text: "Number of Belly Button Washes per Week",
